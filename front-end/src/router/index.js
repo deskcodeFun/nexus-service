@@ -1,5 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
+import ServiceView from '@/views/ServiceView.vue'
+// import UserAdd from '@/components/users/UserAdd.vue'
+
+import UserView from '@/views/UserView.vue'
+import UserAdd from '@/components/users/UserAdd.vue'
+import UserEdit from '@/components/users/UserEdit.vue'
+// import ComputerAdd from '@/components/computer/ComputerAdd.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,10 +21,38 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+
+      component: AboutView,
+    },
+
+    {
+      path: '/services',
+      name: 'service',
+
+      component: ServiceView,
+    },
+    {
+      path: '/user',
+      name: 'user',
+
+      component: UserView,
+    },
+    {
+      path: '/addUser',
+      name: 'add-user',
+
+      component: UserAdd,
+    },
+    {
+      path: '/editUser/:id',
+      name: 'edit-user',
+
+      component: UserEdit,
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'not-found',
+      component: NotFoundView,
     },
   ],
 })

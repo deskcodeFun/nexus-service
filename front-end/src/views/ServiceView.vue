@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>About application</h2>
+    <h2>IT Service</h2>
   </div>
 </template>
 
