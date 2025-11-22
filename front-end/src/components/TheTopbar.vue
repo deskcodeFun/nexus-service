@@ -21,7 +21,7 @@ const navOpen = ref(false);
           </i>
         </div>
         <div :class="navOpen ? '' : 'hidden'">
-          <i class="material-symbols-outlined mt-1.5 rounded-full  text-white"> menu_open </i>
+          <i class="material-symbols-outlined mt-1.5 rounded-full  bg-gray-50/10  text-red-900"> menu_open </i>
         </div>
 
         <!-- <XMarkIcon
@@ -38,7 +38,7 @@ const navOpen = ref(false);
     <Teleport to="body">
       <div
         v-if="navOpen"
-        class="modal mt-14 sm:ml-8"
+        class="modal mt-18"
         @click.self="navOpen = false"
       >
         <nav class="flex flex-col py-4 w-64 bg-sky-50">
